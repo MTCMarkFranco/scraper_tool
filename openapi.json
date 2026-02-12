@@ -1,0 +1,103 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Screen Scrape Hub API",
+    "description": "Scrapes all article links from a given URL, visits each page, strips HTML, and returns the text content as a JSON array.",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://webapp-meridianhub-dshja6g9bfb9avf9.westus2-01.azurewebsites.net",
+      "description": "Azure Web App"
+    }
+  ],
+  "paths": {
+    "/api/scrape": {
+      "post": {
+        "operationId": "scrapeArticles",
+        "summary": "Scrape articles from a URL",
+        "description": "Fetches all article links from the provided URL, visits each one, strips all HTML tags, and returns the plain text content for each article.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["url"],
+                "properties": {
+                  "url": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "The page URL to scrape article links from.",
+                    "example": "https://example.com/blog"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successfully scraped articles",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "url": {
+                        "type": "string",
+                        "format": "uri",
+                        "description": "The URL of the scraped article."
+                      },
+                      "content": {
+                        "type": "string",
+                        "description": "The plain text content of the article with HTML stripped."
+                      },
+                      "error": {
+                        "type": "string",
+                        "description": "Error message if the article could not be fetched."
+                      }
+                    },
+                    "required": ["url"]
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Missing required parameter",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
