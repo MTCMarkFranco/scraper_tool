@@ -1,4 +1,4 @@
-# Meridian — Screen Scrape Hub
+# Foundry Hosted Agent — Screen Scrape Hub
 
 A Flask web API that scrapes article links from a given URL, visits each page, strips HTML, and returns plain-text content as JSON. Uses **curl_cffi** to impersonate Chrome's TLS fingerprint, bypassing Cloudflare and similar anti-bot protections.
 
