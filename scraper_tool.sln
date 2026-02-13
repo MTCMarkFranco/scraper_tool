@@ -1,0 +1,29 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MAF", "MAF", "{796BCF1A-2A75-C57B-4CD5-68BB6882620E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MAF", "MAF\MAF\MAF.csproj", "{9F39BB9A-A8C3-8A65-7588-355CC5B65741}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9F39BB9A-A8C3-8A65-7588-355CC5B65741}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F39BB9A-A8C3-8A65-7588-355CC5B65741}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F39BB9A-A8C3-8A65-7588-355CC5B65741}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F39BB9A-A8C3-8A65-7588-355CC5B65741}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9F39BB9A-A8C3-8A65-7588-355CC5B65741} = {796BCF1A-2A75-C57B-4CD5-68BB6882620E}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {58E3DF75-D01F-43AE-AE6D-386EBC45A3CD}
+	EndGlobalSection
+EndGlobal
